@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 	
-	@Value("${jdbc_url}")
+	@Value("${jdbc_url:jdbc:mysql://localhost:3306/test}")
 	private String jdbcUrl;
 	
 	@Value("${student.desc}")
