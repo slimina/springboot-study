@@ -1,5 +1,6 @@
 package cn.slimsmart.springboot.helloworld.service.impl;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -32,6 +33,7 @@ public class UserServieImpl implements UserServie{
 
 	@Override
 	public Long addUser(User user) {
+		user.setBirthday(new Date());
 		user.setId(idSeed.getAndIncrement());
 		datas.add(user);
 		return user.getId();
