@@ -5,3 +5,6 @@ RemoteSystemsTempFiles
 target
 .classpath
 .project
+.iml
+.idea
+*.iml

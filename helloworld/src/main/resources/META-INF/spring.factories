@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationListener=cn.slimsmart.springboot.helloworld.event.ApplicationEnvironmentPreparedEventListener,\
+  cn.slimsmart.springboot.helloworld.event.ApplicationFailedEventListener,\
+  cn.slimsmart.springboot.helloworld.event.ApplicationPreparedEventListener,\
+  cn.slimsmart.springboot.helloworld.event.ApplicationReadyEventListener,\
+  cn.slimsmart.springboot.helloworld.event.ApplicationStartedEventListener,\
+  cn.slimsmart.springboot.helloworld.event.ApplicationStartingEventListener

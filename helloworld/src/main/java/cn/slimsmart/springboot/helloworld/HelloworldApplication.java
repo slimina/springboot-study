@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
@@ -42,5 +43,18 @@ public class HelloworldApplication implements EmbeddedServletContainerCustomizer
 		// 设置超时
 		http11NioProtocol.setConnectionTimeout(5000);
 		return connector;
+	}
+
+	//测试事件加载顺序
+	@Bean
+	public DataLoader dataLoader() {
+		return new DataLoader();
+	}
+	//实例化测试例子
+	static class DataLoader implements CommandLineRunner {
+		@Override
+		public void run(String... strings) throws Exception {
+			System.out.println("Loading data...");
+		}
 	}
 }
