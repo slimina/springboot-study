@@ -9,12 +9,13 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ConsumerController {
 
-	 	@Autowired
-	    RestTemplate restTemplate;
-	 
-	    @RequestMapping(value = "/add", method = RequestMethod.GET)
-	    public String add() {
-	    	//eurak-provider-demo 提供者服务名称
-	        return restTemplate.getForEntity("http://eureka-provider-demo/add?a=10&b=20", String.class).getBody();
-	    }
+  @Autowired RestTemplate restTemplate;
+
+  @RequestMapping(value = "/add", method = RequestMethod.GET)
+  public String add() {
+    // eurak-provider-demo 提供者服务名称
+    return restTemplate
+        .getForEntity("http://eureka-provider-demo/add?a=10&b=20", String.class)
+        .getBody();
+  }
 }

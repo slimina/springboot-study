@@ -11,25 +11,24 @@ import cn.slimsmart.springboot.jpa.entity.User;
 import cn.slimsmart.springboot.jpa.service.UserServie;
 
 @Service
-public class UserServieImpl implements UserServie{
-	
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Override
-	public List<User> findList() {
-		return userRepository.findAll();
-	}
+public class UserServieImpl implements UserServie {
 
-	@Transactional
-	@Override
-	public Long addUser(User user) {
-		userRepository.save(user);
-		return user.getId();
-	}
+  @Autowired private UserRepository userRepository;
 
-	@Override
-	public User findByName(String name) {
-		return userRepository.findUser(name);
-	}
+  @Override
+  public List<User> findList() {
+    return userRepository.findAll();
+  }
+
+  @Transactional
+  @Override
+  public Long addUser(User user) {
+    userRepository.save(user);
+    return user.getId();
+  }
+
+  @Override
+  public User findByName(String name) {
+    return userRepository.findUser(name);
+  }
 }

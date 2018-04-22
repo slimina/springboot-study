@@ -1,13 +1,6 @@
 package cn.slimsmart.springboot.ldapdemo;
 
-import net.minidev.json.annotate.JsonIgnore;
-import org.springframework.ldap.odm.annotations.Attribute;
-import org.springframework.ldap.odm.annotations.Entry;
-import org.springframework.ldap.odm.annotations.Id;
-import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.util.StringUtils;
-
-import javax.naming.Name;
 
 /**
  * Created by zhutw on 2018/3/8.
@@ -119,18 +112,40 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id='" + id + '\'' +
-                ", accountName='" + accountName + '\'' +
-                ", name='" + name + '\'' +
-                ", displayName='" + displayName + '\'' +
-                ", department='" + department + '\'' +
-                ", entryTime='" + entryTime + '\'' +
-                ", leaveTime='" + leaveTime + '\'' +
-                ", email='" + email + '\'' +
-                ", company='" + company + '\'' +
-                ", telephoneNumber='" + telephoneNumber + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return "Employee{"
+                + "id='"
+                + id
+                + '\''
+                + ", accountName='"
+                + accountName
+                + '\''
+                + ", name='"
+                + name
+                + '\''
+                + ", displayName='"
+                + displayName
+                + '\''
+                + ", department='"
+                + department
+                + '\''
+                + ", entryTime='"
+                + entryTime
+                + '\''
+                + ", leaveTime='"
+                + leaveTime
+                + '\''
+                + ", email='"
+                + email
+                + '\''
+                + ", company='"
+                + company
+                + '\''
+                + ", telephoneNumber='"
+                + telephoneNumber
+                + '\''
+                + ", description='"
+                + description
+                + '\''
+                + '}';
     }
 }

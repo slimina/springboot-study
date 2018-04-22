@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConsumerController {
 
-	 	@Autowired
-	 	DemoClient demoClient;
-	 
-	    @RequestMapping(value = "/add", method = RequestMethod.GET)
-	    public Integer add() {
-	        return demoClient.add(40, 50);
-	    }
+  @Autowired DemoClient demoClient;
+
+  @RequestMapping(value = "/add", method = RequestMethod.GET)
+  public Integer add() {
+    return demoClient.add(40, 50);
+  }
 }
