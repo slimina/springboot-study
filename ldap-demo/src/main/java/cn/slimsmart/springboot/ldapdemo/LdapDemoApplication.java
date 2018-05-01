@@ -11,6 +11,6 @@ public class LdapDemoApplication {
         ConfigurableApplicationContext context = SpringApplication.run(LdapDemoApplication.class, args);
         LdapEmployeeDao ldapEmployeeDao = context.getBean(LdapEmployeeDao.class);
         System.out.println(ldapEmployeeDao.findByAccountName("zhutw"));
-        ldapEmployeeDao.findAll("OU=云平台部1,OU=平台技术中心1,OU=01总部", "person").forEach(System.out::println);
+        ldapEmployeeDao.findAll("OU=研发部,OU=集团", "person").forEach(System.out::println);
     }
 }

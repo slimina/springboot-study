@@ -30,9 +30,16 @@
         <module>eureka-provider-demo</module>
         <module>eureka-server</module>
         <module>freemarker</module>
+        <module>thymeleaf</module>
         <module>helloworld</module>
         <module>jpa-demo</module>
         <module>ldap-demo</module>
+        <module>spring-security-demo</module>
+        <module>spring-redis-demo</module>
+        <module>spring-cache-ehcache</module>
+        <module>spring-rabbitmq-demo</module>
+        <module>spring-task-demo</module>
+        <module>spring-email-demo</module>
     </modules>
 
     <dependencies>
@@ -44,7 +51,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

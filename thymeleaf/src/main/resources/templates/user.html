@@ -1,0 +1,10 @@
+<h1 th:text="${host}">Hello World</h1>
+
+<table>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+    </tr>
+    </tbody>
+</table>
