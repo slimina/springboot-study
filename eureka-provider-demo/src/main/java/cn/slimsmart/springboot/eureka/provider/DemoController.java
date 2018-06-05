@@ -12,16 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
-	private final Logger logger = LoggerFactory.getLogger(getClass());
-	
-    @Autowired
-    private DiscoveryClient client;
-    
-    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        Integer r = a + b;
-        logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return r;
-    }
+  private final Logger logger = LoggerFactory.getLogger(getClass());
+
+  @Autowired private DiscoveryClient client;
+
+  @RequestMapping(value = "/add", method = RequestMethod.GET)
+  public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+    ServiceInstance instance = client.getLocalServiceInstance();
+    Integer r = a + b;
+    logger.info(
+        "/add, host:"
+            + instance.getHost()
+            + ", service_id:"
+            + instance.getServiceId()
+            + ", result:"
+            + r);
+    return r;
+  }
 }

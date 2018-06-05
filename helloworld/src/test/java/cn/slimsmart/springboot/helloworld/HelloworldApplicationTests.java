@@ -21,44 +21,47 @@ import cn.slimsmart.springboot.helloworld.entity.User;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class HelloworldApplicationTests {
-	
-	@Autowired
-	private TestRestTemplate restTemplate;
 
-	@Test
-	public void testSayHello() throws Exception {
-		HttpHeaders requestHeaders = new HttpHeaders();
-		requestHeaders.setContentType(MediaType.APPLICATION_JSON);
-		requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-		User user = new User();
-		user.setAge(30);
-		user.setBirthday(new Date());
-		user.setName("tom");
-		HttpEntity<User> request = new HttpEntity<User>(user, requestHeaders);
-		Long id = restTemplate.postForObject("/user", request, Long.class);
-		Assert.assertEquals(restTemplate.getForEntity("/user/sayHello/{id}", String.class,  id).getBody(), "hello tom");;
-	}
-	
-	@Test
-	public void testSayHelloNoFound() throws Exception {
-		Assert.assertEquals(restTemplate.getForEntity("/user/sayHello/{id}", String.class,  -1).getBody(), "not found");;
-	}
-	
-	@Test
-	public void testsave() throws Exception {
-		HttpHeaders requestHeaders = new HttpHeaders();
-		requestHeaders.setContentType(MediaType.APPLICATION_JSON);
-		requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-		User user = new User();
-		user.setAge(30);
-		user.setBirthday(new Date());
-		user.setName("jetty");
-		HttpEntity<User> request = new HttpEntity<User>(user, requestHeaders);
-		Assert.assertNotNull(restTemplate.postForEntity("/user", request, Long.class).getBody());
-	}
-	
-	@Test
-	public void testList() throws Exception {
-		Assert.assertTrue(restTemplate.getForEntity("/user/list", List.class).getBody().size() > 0);
-	}
+  @Autowired private TestRestTemplate restTemplate;
+
+  @Test
+  public void testSayHello() throws Exception {
+    HttpHeaders requestHeaders = new HttpHeaders();
+    requestHeaders.setContentType(MediaType.APPLICATION_JSON);
+    requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+    User user = new User();
+    user.setAge(30);
+    user.setBirthday(new Date());
+    user.setName("tom");
+    HttpEntity<User> request = new HttpEntity<User>(user, requestHeaders);
+    Long id = restTemplate.postForObject("/user", request, Long.class);
+    Assert.assertEquals(
+        restTemplate.getForEntity("/user/sayHello/{id}", String.class, id).getBody(), "hello tom");
+    ;
+  }
+
+  @Test
+  public void testSayHelloNoFound() throws Exception {
+    Assert.assertEquals(
+        restTemplate.getForEntity("/user/sayHello/{id}", String.class, -1).getBody(), "not found");
+    ;
+  }
+
+  @Test
+  public void testsave() throws Exception {
+    HttpHeaders requestHeaders = new HttpHeaders();
+    requestHeaders.setContentType(MediaType.APPLICATION_JSON);
+    requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+    User user = new User();
+    user.setAge(30);
+    user.setBirthday(new Date());
+    user.setName("jetty");
+    HttpEntity<User> request = new HttpEntity<User>(user, requestHeaders);
+    Assert.assertNotNull(restTemplate.postForEntity("/user", request, Long.class).getBody());
+  }
+
+  @Test
+  public void testList() throws Exception {
+    Assert.assertTrue(restTemplate.getForEntity("/user/list", List.class).getBody().size() > 0);
+  }
 }

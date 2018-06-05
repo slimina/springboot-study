@@ -14,12 +14,16 @@ import javax.naming.Name;
 public class Person {
     @Id
     private Name id;
+
     @DnAttribute(value = "uid", index = 3)
     private String uid;
+
     @Attribute(name = "cn")
     private String commonName;
+
     @Attribute(name = "sn")
     private String suerName;
+
     private String userPassword;
 
     public Name getId() {
